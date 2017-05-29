@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>bootstrap validate</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <form class="bootstrap-validate">
+            <div class="form-group">
+                <label for="email">邮箱地址</label>
+                <input type="text" class="form-control" id="email" placeholder="请输入邮箱地址" 
+                data-bv-require="true"
+                data-bv-email="true"
+                data-bv-require-error="* 邮箱地址不能为空"
+                data-bv-email-error="邮箱地址不合法">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" id="password" placeholder="请输入密码"
+                data-bv-require="true"
+                data-bv-regex="/^\w+$/"
+                data-bv-require-error="* 密码不能为空"
+                data-bv-regex-error=" 密码由a-z、A-Z、0-9，以及下划线组成"
+                >
+            </div>
+            <div class="form-group">
+                <label for="repeatPassword">重复密码</label>
+                <input type="password" class="form-control" id="repeatPassword" placeholder="请输入重复密码"
+                data-bv-require="true"
+                data-bv-regex="/^\w+$/"
+                data-bv-compareto="#password"
+                data-bv-require-error="* 密码不能为空"
+                data-bv-regex-error=" 密码由a-z、A-Z、0-9，以及下划线组成"
+                data-bv-compareTo-error=" 两次密码输入不一致">
+            </div>
+            <div class="form-group">
+                <label for="inputFile">上传图片</label>
+                <input type="file" id="inputFile">
+            </div>
+            <div class="checkbox">
+            <label>
+            <input type="checkbox"> Check me out
+            </label>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+            <button type="reset" class="btn btn-default">重置</button>
+        </form>   
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap-validate.js"></script>
+</body>
+</html>
